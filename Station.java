@@ -5,6 +5,7 @@ public class Station {
     private Detective[] detectivesList;
     private String name;
     private int currentDetectiveCount;
+    static int lastBadgeNumber = 0;
 
     public Station(String name) {
         detectivesList = new Detective[max_detectives];
@@ -20,13 +21,14 @@ public class Station {
         }
     }
 
-    public void hireDetective(int badgeNumber) {
+    public void hireDetective() {
         if (currentDetectiveCount < max_detectives) {
             Scanner sc = new Scanner(System.in);
             System.out.print("New hire for " + name + "...Enter detective's name: ");
             String detectiveName = sc.nextLine();
 
-            detectivesList[currentDetectiveCount] = new Detective(detectiveName, badgeNumber);
+            detectivesList[currentDetectiveCount] = new Detective(detectiveName, lastBadgeNumber + 1);
+            lastBadgeNumber++;
             currentDetectiveCount++;
         }
         else {
