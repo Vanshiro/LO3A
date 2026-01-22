@@ -1,7 +1,6 @@
 public class PublicSafety {
     Station campus;
     Station city;
-    int badgeNum;
     public PublicSafety(String campus, String city){
         this.campus = new Station(campus);
         this.city = new Station(city);
@@ -10,9 +9,9 @@ public class PublicSafety {
     public void doHire(boolean hire){
         badgeNum ++;
         if(hire){
-            city.hireDetective(badgeNum);
+            city.hireDetective();
         }else{
-            campus.hireDetective(badgeNum);
+            campus.hireDetective();
         }
     }
 
