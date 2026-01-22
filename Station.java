@@ -26,7 +26,7 @@ public class Station {
             System.out.print("New hire for " + name + "...Enter detective's name: ");
             String detectiveName = sc.nextLine();
 
-            detectivesList[currentDetectiveCount] = new Detective(badgeNumber, detectiveName);
+            detectivesList[currentDetectiveCount] = new Detective(detectiveName, badgeNumber);
             currentDetectiveCount++;
         }
         else {
