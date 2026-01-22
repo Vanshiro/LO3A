@@ -33,6 +33,7 @@ public class Station {
             detectivesList[currentDetectiveCount] = new Detective(detectiveName, lastBadgeNumber + 1);
             lastBadgeNumber++;
             currentDetectiveCount++;
+            sc.close();
         }
         else {
             System.out.println("Can't hire any more detectives for " + name);
